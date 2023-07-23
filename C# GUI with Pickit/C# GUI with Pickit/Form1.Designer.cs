@@ -37,9 +37,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(532, 92);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(334, 145);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 80);
+            this.button1.Size = new System.Drawing.Size(132, 98);
             this.button1.TabIndex = 0;
             this.button1.Text = "Import";
             this.button1.UseVisualStyleBackColor = false;
@@ -47,20 +48,24 @@
             // 
             // txtHexFilePath
             // 
-            this.txtHexFilePath.Location = new System.Drawing.Point(28, 22);
+            this.txtHexFilePath.Location = new System.Drawing.Point(266, 49);
             this.txtHexFilePath.Multiline = true;
             this.txtHexFilePath.Name = "txtHexFilePath";
-            this.txtHexFilePath.Size = new System.Drawing.Size(354, 330);
+            this.txtHexFilePath.Size = new System.Drawing.Size(270, 51);
             this.txtHexFilePath.TabIndex = 1;
+            this.txtHexFilePath.Text = "Insert path to pickit device";
             this.txtHexFilePath.TextChanged += new System.EventHandler(this.txtHexFilePath_TextChanged);
+            this.txtHexFilePath.Enter += new System.EventHandler(this.txtHexFilePath_Enter);
+            this.txtHexFilePath.Leave += new System.EventHandler(this.txtHexFilePath_Leave);
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(498, 214);
+            this.txtOutput.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.txtOutput.Location = new System.Drawing.Point(312, 267);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(180, 93);
+            this.txtOutput.Size = new System.Drawing.Size(180, 67);
             this.txtOutput.TabIndex = 0;
             // 
             // Form1

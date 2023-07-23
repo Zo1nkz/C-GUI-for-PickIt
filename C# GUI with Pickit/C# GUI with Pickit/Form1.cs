@@ -22,10 +22,10 @@ namespace C__GUI_with_Pickit
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string hexFilePath = txtHexFilePath.Text; //GUI for text input (code for pickit)
+            string hexFilePath = txtHexFilePath.Text; 
             if (File.Exists(hexFilePath))
             {
-                string command = $"/c \"{PICKIT_EXECUTABLE_PATH}\" -PPIC{"\"" + hexFilePath + "\""}";
+                string command = $"/c \"{PICKIT_EXECUTABLE_PATH}\" -PPIC{"\"" + hexFilePath + "\""}"; //replace with path to pickit device on the computer
 
                 ProcessStartInfo processInfo = new ProcessStartInfo("cmd.exe", command);
                 processInfo.RedirectStandardOutput = true;
@@ -49,12 +49,31 @@ namespace C__GUI_with_Pickit
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void txtHexFilePath_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtHexFilePath_Enter(object sender, EventArgs e)
+        {
+            if (txtHexFilePath.Text == "Insert path to pickit device")
+            {
+                txtHexFilePath.Text = "";
+
+                txtHexFilePath.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtHexFilePath_Leave(object sender, EventArgs e)
+        {
+            if (txtHexFilePath.Text == "")
+            {
+                txtHexFilePath.Text = "Insert path to pickit device";
+
+                txtHexFilePath.ForeColor = Color.Silver;
+            }
         }
     }
 }
